@@ -2,6 +2,7 @@
 // Developed By : T.Rajkumar t[dot]rajkumar2020[at]gmail[dot]com
 // Version : 1.0
 // http://www.geekzground.com && http://geekzground.wordpress.com
+
 var onesArray = new Array('சுழியம்', 'ஒன்று', 'இரண்டு', 'மூன்று', 'நான்கு', 'ஐந்து',
     'ஆறு', 'ஏழு', 'எட்டு', 'ஒன்பது', 'பத்து',
     'பதினொன்று', ' பனிரண்டு', 'பதிமூன்று', 'பதினான்கு', 'பதினைந்து',
