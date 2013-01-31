@@ -16,44 +16,54 @@ var hrdArraySuffix = new Array(' ', 'நூற்றி', 'இரு நூற�
     'தொள்ளாயிரத்து');
 var chk;
 
-function convToStr() {
+function convToStr() {    
     var num = document.getElementById("iNumber").value;
+    document.getElementById("oString").innerHTML = NumAsStr(num)
+}
+
+function NumAsStr(num) {
+    
+    aswords = ""
+
     if (num == "") {
         alert("Please Enter a Number");
     }
+
     if (num != "") {
-        num = document.getElementById("iNumber").value = parseInt(removeSpl(num), 10);
+        num = parseInt(removeSpl(num), 10);
         var sNum = num.toString();
         var len = sNum.length;
-        if (len > 10) document.getElementById("oString").value = "மன்னிக்கவும்!!! என்னால் பத்து ஸ்தான எண்கள் வரை மட்டுமே மாற்ற இயலும்...";
+        if (len > 10) aswords = "மன்னிக்கவும்!!! என்னால் பத்து ஸ்தான எண்கள் வரை மட்டுமே மாற்ற இயலும்...";
         if ((len == 1) || (len == 2)) {
-            document.getElementById("oString").innerHTML = twoDigit(num);
+            aswords = twoDigit(num);
         }
         if (len == 3) {
-            document.getElementById("oString").innerHTML = threeDigit(num);
+            aswords = threeDigit(num);
         }
         if (len == 4) {
-            document.getElementById("oString").innerHTML = fourDigit(num);
+            aswords = fourDigit(num);
         }
         if (len == 5) {
-            document.getElementById("oString").innerHTML = fiveDigit(num);
+            aswords = fiveDigit(num);
         }
         if (len == 6) {
-            document.getElementById("oString").innerHTML = sixDigit(num);
+            aswords = sixDigit(num);
         }
         if (len == 7) {
-            document.getElementById("oString").innerHTML = sevenDigit(num);
+            aswords = sevenDigit(num);
         }
         if (len == 8) {
-            document.getElementById("oString").innerHTML = eightDigit(num);
+            aswords = eightDigit(num);
         }
         if (len == 9) {
-            document.getElementById("oString").innerHTML = nineDigit(num);
+            aswords = nineDigit(num);
         }
         if (len == 10) {
-            document.getElementById("oString").innerHTML = tenDigit(num);
+            aswords = tenDigit(num);
         }
     }
+
+    return aswords
 }
 
 function removeSpl(str) {
@@ -160,6 +170,6 @@ function tenDigit(inp) {
         else if (chk > 9999) return (afd == 1) ? "ஓர் நிகர்ப்புதம் " + fiveDigit(inp.toString().substring(5)) : onesArray[afd] + " நிகர்ப்புதம் " + fiveDigit(inp.toString().substring(5));
         else if (chk > 999) return (afd == 1) ? "ஓர் நிகர்ப்புதம் " + fourDigit(inp.toString().substring(6)) : onesArray[afd] + " நிகர்ப்புதம் " + fourDigit(inp.toString().substring(6));
         else if (chk > 99) return (afd == 1) ? "ஓர் நிகர்ப்புதம் " + threeDigit(chk) : onesArray[afd] + " நிகர்ப்புதம் " + threeDigit(chk);
-        else return (afd == 1) ? "ஓர் நிகர்ப்புதம்	 " + twoDigit(chk) : onesArray[afd] + " நிகர்ப்புதம் " + twoDigit(chk);
+        else return (afd == 1) ? "ஓர் நிகர்ப்புதம்   " + twoDigit(chk) : onesArray[afd] + " நிகர்ப்புதம் " + twoDigit(chk);
     }
 }
