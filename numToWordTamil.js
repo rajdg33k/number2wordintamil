@@ -71,16 +71,38 @@ function removeSpl(str) {
 }
 
 function tamScript(tStr) {
-    if (tStr==0) return '0';
-    if (tStr==1) return '௧';
-    if (tStr==2) return '௨';
-    if (tStr==3) return '௩';
-    if (tStr==4) return '௪';
-    if (tStr==5) return '௫';
-    if (tStr==6) return '௬';
-    if (tStr==7) return '௭';
-    if (tStr==8) return '௮';
-    if (tStr==9) return '௯';
+    switch(tStr){
+                 case '0':
+                  return '0';
+                  break;
+                 case '1':
+                  return '௧';
+                  break;
+                 case '2':
+                  return '௨';
+                  break;
+                 case '3':
+                  return '௩';
+                  break;
+                 case '4':
+                  return '௪';
+                  break;
+                 case '5':
+                  return '௫';
+                  break;
+                 case '6':
+                  return '௬';
+                  break;
+                 case '7':
+                  return '௭';
+                  break;
+                 case '8':
+                  return '௮';
+                  break;
+                 case '9':
+                  return '௯';
+                  break;
+                } 
 }
 
 function twoDigit(inp) {
