@@ -1,7 +1,7 @@
 // JavaScript To Convert Numbers into their Word Equivalent in Tamil
 // Developed By : T.Rajkumar t[dot]rajkumar2020[at]gmail[dot]com
-// Version : 1.0
-// http://www.geekzground.com && http://geekzground.wordpress.com
+// Version : 1.1
+// Copyright: © http://www.geekzground.com && http://geekzground.wordpress.com
 
 var onesArray = new Array('suliyam', 'onru', 'irandu', 'moondru', 'naangu', 'aintu',
     'aaru', 'elu', 'ettu', 'onpadhu', 'patthu',
@@ -25,7 +25,7 @@ function convToStr() {
         num = document.getElementById("iNumber").value = parseInt(removeSpl(num), 10);
         var sNum = num.toString();
         var len = sNum.length;
-        if (len > 10) document.getElementById("oString").value = "Whoops! I can only handle 10 Digit numbers. Sorry !!!";
+        if (len > 10) document.getElementById("oString").innerHTML = "Whoops! I can only handle 10 Digit numbers. Sorry !!!";
         if ((len == 1) || (len == 2)) {
             document.getElementById("oString").innerHTML = capAll(twoDigit(num));
         }
