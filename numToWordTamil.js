@@ -1,7 +1,7 @@
 // JavaScript To Convert Numbers into their Word Equivalent in Tamil
 // Developed By : T.Rajkumar t[dot]rajkumar2020[at]gmail[dot]com
-// Version : 1.0
-// http://www.geekzground.com && http://geekzground.wordpress.com
+// Version : 1.1
+// Copyright © : http://www.geekzground.com && http://geekzground.wordpress.com
 
 var onesArray = new Array('சுழியம்', 'ஒன்று', 'இரண்டு', 'மூன்று', 'நான்கு', 'ஐந்து',
     'ஆறு', 'ஏழு', 'எட்டு', 'ஒன்பது', 'பத்து',
@@ -12,7 +12,7 @@ var tensArray = new Array(' ', ' ', 'இருபது', 'முப்பது
 var tensArraySuffix = new Array(' ', ' ', 'இருபத்தி', 'முப்பத்தி', 'நாற்பத்தி', 'ஐம்பத்தி', 'அறுபத்தி', 'எழுபத்தி', 'எண்பத்தி', 'தொன்னூற்றி');
 var hrdArray = new Array(' ', 'நூறு', 'இரு நூறு', 'முன்னூறு', 'நாநூறு',
     'ஐநூறு', 'அறுநூறு', 'எழுநூறு', 'எண்ணூறு', 'தொள்ளாயிரம்');
-var hrdArraySuffix = new Array(' ', 'நூற்றி', 'இரு நூற்றி', 'முன்னூற்று', 'நாநூற்று', 'ஐநூற்று', 'அறுநூற்று', 'எழுநூற்று', 'எண்ணூற்று',
+var hrdArraySuffix = new Array(' ', 'நூற்றி', 'இருநூற்றி', 'முன்னூற்று', 'நாநூற்று', 'ஐநூற்று', 'அறுநூற்று', 'எழுநூற்று', 'எண்ணூற்று',
     'தொள்ளாயிரத்து');
 var chk;
 
@@ -25,7 +25,7 @@ function convToStr() {
         num = document.getElementById("iNumber").value = parseInt(removeSpl(num), 10);
         var sNum = num.toString();
         var len = sNum.length;
-        if (len > 10) document.getElementById("oString").value = "மன்னிக்கவும்!!! என்னால் பத்து ஸ்தான எண்கள் வரை மட்டுமே மாற்ற இயலும்...";
+        if (len > 10) document.getElementById("oString").innerHTML = "மன்னிக்கவும்!!! என்னால் பத்து இலக்க எண்கள் வரை மட்டுமே மாற்ற இயலும்...";
         if ((len == 1) || (len == 2)) {
             document.getElementById("oString").innerHTML = twoDigit(num);
         }
@@ -58,10 +58,29 @@ function convToStr() {
 
 function removeSpl(str) {
     var outStr = '';
+    var tamStr = '';
     var validDgt = "0123456789"
     for (var i = 0; i < str.length; i++)
-    if (validDgt.indexOf(str.charAt(i)) != -1) outStr += str.charAt(i)
+    if (validDgt.indexOf(str.charAt(i)) != -1) 
+    {
+        tamStr += tamScript(str.charAt(i));
+    	outStr += str.charAt(i);
+    }
+    document.getElementById("numTamil").value = tamStr;
     return outStr;
+}
+
+function tamScript(tStr) {
+    if (tStr==0) return '0';
+    if (tStr==1) return '௧';
+    if (tStr==2) return '௨';
+    if (tStr==3) return '௩';
+    if (tStr==4) return '௪';
+    if (tStr==5) return '௫';
+    if (tStr==6) return '௬';
+    if (tStr==7) return '௭';
+    if (tStr==8) return '௮';
+    if (tStr==9) return '௯';
 }
 
 function twoDigit(inp) {
