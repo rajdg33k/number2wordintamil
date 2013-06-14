@@ -129,7 +129,8 @@ function fourDigit(inp) {
     if (inp == 1000) return "ஓர் ஆயிரம்";
     if ((inp % 1000 == 0) && (inp != 1000)) return onesArray[tfd] + " ஆயிரம்";
     else {
-        return onesArray[tfd] + " ஆயிரத்தி " + threeDigit(inp.toString().substring(1));
+           if(inp>1000 && inp<2000) return "ஆயிரத்தி " + threeDigit(inp.toString().substring(1));
+           else return onesArray[tfd] + " ஆயிரத்தி " + threeDigit(inp.toString().substring(1));
     }
 }
 
