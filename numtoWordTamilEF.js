@@ -88,7 +88,8 @@ function fourDigit(inp) {
     if (inp == 1000) return "aayiram";
     if ((inp % 1000 == 0) && (inp != 1000)) return onesArray[tfd] + " aayiram";
     else {
-        return onesArray[tfd] + " aayirathi " + threeDigit(inp.toString().substring(1));
+        if(inp>1000 && inp<2000) return "aayirathi " + threeDigit(inp.toString().substring(1));
+        else return onesArray[tfd]+" aayirathi "+threeDigit(inp.toString().substring(1));
     }
 }
 
